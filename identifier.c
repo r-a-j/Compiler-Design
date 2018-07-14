@@ -10,16 +10,43 @@ void main()
 {
   // Declarations --------------------
 
-  char identifier[100],check[100];
+  char identifier[100];
+  int i;
+  _Bool valid = 0;
 
   // End of Declarations------------------
 
   printf("Welcome to the program of checking the identifier...\n");
-  printf("Enter the identifier : ");
+  printf("\nEnter the identifier : ");
   gets(identifier);
+
+  /*
+  //Printing the entered string
+  for(i=0 ; i<strlen(identifier) ; i++)
+  {
+    printf("%c",identifier[i]);
+  }
+  */
+
+  // Prefoming the checking of the rules of the identifier
 
   for(i=0 ; i<strlen(identifier) ; i++)
   {
-
+    if((identifier[0] >= 'a') || (identifier[0] >= 'z') || (identifier[0] >= 'A') || (identifier[0] >= 'Z'))
+    {
+      valid = 1;
+    }
   }
+
+  if(valid)
+  {
+    printf("\nYes Valid ");
+    valid = 0;
+  }
+  else
+  {
+    printf("\nNot Valid ");
+  }
+
+  getchar();
 }
